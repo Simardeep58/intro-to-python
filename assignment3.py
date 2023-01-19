@@ -22,23 +22,26 @@ month_numbers = {
     "november": "11",
     "december": "12",
 }
-day = (input("enter day"))
+day = input("enter day")
 month = input("enter month")
-year = input("enter year")
-
-if month == "feb" and int(day) == 29 and int(year) % 4 == 0 and int(year) % 400 == 0:
+year = int(input("enter year"))
+if (year) % 4 == 0 and (year)% 100 == 0 and (year) % 400 != 0 or (year)%4!=0 and (year)%100!=0 and (year)%400!=0:
+    print("not a leap year")
+    leap_year = False
+else:
+    print("leap year")
+    leap_year = True
+if month == "feb" and int(day) == 28 and leap_year==False:
     day = 1
     month = "march"
-elif 1 <= int(day) <= 30:
-    day = int(day) + 1
-elif month == "feb" and int(day) == 28 and int(year) % 4 == 0 and int(year) % 400 == 0:
+
+elif month == "feb" and int(day) == 28 and leap_year==True:
     day = 29
     month = "feb"
-elif month == "feb" and int(day) == 29 and int(year) % 4 == 0 and int(year) % 400 != 0:
-    print("invalid date")
-elif month == "feb" and int(day) == 28 and int(year) % 4 == 0 and int(year) % 400 != 0:
+elif month=="feb" and int(day)==29:
     day = 1
     month = "march"
+
 elif (month=="jan" or month=="march" or month=="may" or month=="july" or month=="august" or month=="october") and int(day) == 31:
     day = 1
     a = (month_numbers[month])
