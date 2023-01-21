@@ -19,12 +19,12 @@ else:
 
 #q2
 year = int(input("enter year"))
-if (year) % 4 == 0 and (year)% 100 == 0 and (year) % 400 != 0 or (year)%4!=0 and (year)%100!=0 and (year)%400!=0:
+if year % 4 == 0 and year % 100 == 0 and year % 400 != 0 or year % 4 != 0 and year % 100 != 0 and year % 400 != 0:
     leap_year = False
 else:
     leap_year = True
 if leap_year==True:
-    print("leao year")
+    print("leap year")
 else:
     print("not a leap year")
 
